@@ -65,7 +65,7 @@ RECAPTCHA_SECRET=<your-google-secret-key>
 
 ## Front end 
 
-Using the URL from the API gateway we can now put this into our frontend form, plug in our Google SITE ID run `npm run dev` and voila, we can now send emails after checking the "I'm not a robot box!" - Please note: this demo front end has been created using Typescript and NextJS.
+Using the URL from the API gateway we can now put this into our frontend form and plug in our Google SITE ID into our .env file, run `yarn dev` and voila, we can now send emails after checking the "I'm not a robot box!" - Please note: this demo front end has been created using Typescript and NextJS.
 
 1. Change into our front end directory `cd ./frontend/`
 2. Create a frontend `.env` file to use our Google Site ID and the AWS API Gateway URL 

@@ -1,0 +1,35 @@
+service: testwebsite-contact-form
+
+frameworkVersion: '2'
+useDotenv: true
+
+plugins:
+  - serverless-bundle
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  region: ${env:REGION}
+  profile: ${env:IAM_PROFILE} # ~/.aws/credentials IAM user
+
+  iamRoleStatements: 
+    - Effect: "Allow"
+      Action:
+        - "ses:SendEmail"
+      Resource: ["*"]
+
+  # Our environment variables that our Lambda function will use
+  environment:
+    FROM_EMAIL: ${env:FROM_EMAIL}
+    TO_EMAIL: ${env:TO_EMAIL}
+    RECAPTCHA_SECRET: ${env:RECAPTCHA_SECRET}
+
+# This creates our API Gateway endpoint as well as our Lambda function handler (which is our contactUs.js script)
+functions:
+  contactUs:
+    handler: contactUs.post
+    events:
+      - http:
+          path: contact-us
+          method: post

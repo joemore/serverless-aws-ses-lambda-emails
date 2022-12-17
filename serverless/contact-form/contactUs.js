@@ -96,7 +96,7 @@ const sendEmail = async (data) => {
       },
       Subject: {
         Charset: 'UTF-8',
-        Data: subject.trim().length && subject 
+        Data: subject.trim().length && subject
           || process.env.BLANK_SUBJECT //Include this in your .env if you wish
           || `Contact Form - ${name}` //Default subject if left blank by user
       }

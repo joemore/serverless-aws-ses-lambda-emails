@@ -16,9 +16,9 @@ export default async function handler(
   const { name, email, subject, message, token } = body 
 
   // Send the request to our AWS API Gateway endpoint, then lambda function then processes it and sends us back a response.
-  const url = process.env.API_GATEWAY_ENDPOINT;
+  const url = process.env.CONTACTUS_API_GATEWAY_ENDPOINT;
   if( !url ){
-    return res.status(200).json( { error: "Please set API_GATEWAY_ENDPOINT in .env" } )
+    return res.status(200).json( { error: "Please set CONTACTUS_API_GATEWAY_ENDPOINT in .env" } )
   }
 
   const response = await fetch(url, {

@@ -6,7 +6,7 @@ If you have a website with a contact form, and an AWS account then you can easil
 
 # SUPER BASIC GUIDE:
 
-1. Edit the `./serverless/contact-form/.env` file to add your AWS creds & Google Re-captcha key etc
+1. Edit (Or Create it if missing) the `./serverless/contact-form/.env` file to add your AWS creds & Google Re-captcha key etc
 
 ```
 REGION=eu-west-2 
@@ -22,7 +22,7 @@ RECAPTCHA_SECRET=aaaaaaaaaaaaaaa11111111111111
 
 ```
 NEXT_PUBLIC_RECAPTCHA_SITE_KEY=bbbbbbbbbbbb222222222222
-API_GATEWAY_ENDPOINT=https://12345678.execute-api.eu-west-2.amazonaws.com/dev/contact-us/
+CONTACTUS_API_GATEWAY_ENDPOINT=https://12345678.execute-api.eu-west-2.amazonaws.com/dev/contact-us/
 ```
 
 
@@ -72,7 +72,7 @@ Using the URL from the API gateway we can now put this into our frontend form an
 
 ```
 NEXT_PUBLIC_RECAPTCHA_SITE_KEY=aaaaaaaaaaaaaaa11111111111111
-API_GATEWAY_ENDPOINT=https://12345678.execute-api.eu-west-2.amazonaws.com/dev/contact-us/
+CONTACTUS_API_GATEWAY_ENDPOINT=https://12345678.execute-api.eu-west-2.amazonaws.com/dev/contact-us/
 ```
 
 3. `yarn install` to load our dependencies 
